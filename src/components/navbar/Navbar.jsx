@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CryptoContext } from '../../context/CoinContwxt';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const {currency, setCurrency} = useContext(CryptoContext)
+
+  const currencyHandler=(e)=>{
+    switch(e.target.value){
+      case "usd":
+        setCurrency({name:"usd",symbol:"$"})
+        break;
+      case "eur":
+        setCurrency({name:"eur",symbol:"€"})
+        break;
+      case "inr":
+        setCurrency({name:"inr",symbol:"₹"})
+        break;
+      default:
+        setCurrency({name:"usd",symbol:"$"})  
+    }
+  }
 
   return (
     <nav className="w-full bg-white py-6 px-5 md:px-10 lg:px-20 flex items-center justify-between relative">
@@ -33,6 +51,8 @@ const Navbar = () => {
           name="currency" 
           id="currency" 
           className="bg-transparent text-black font-medium text-[15px] outline-none cursor-pointer focus:ring-0"
+          value={currency.name}
+          onChange={currencyHandler}
         >
           <option value="usd">USD</option>
           <option value="eur">EUR</option>
@@ -74,7 +94,11 @@ const Navbar = () => {
           </ul>
           
           <div className="flex flex-col gap-4 mt-2 pt-6 border-t-2 border-black">
-            <select className="border-2 border-black bg-white text-black font-bold py-3 px-4 focus:outline-none cursor-pointer shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] w-full text-center appearance-none">
+            <select 
+              className="border-2 border-black bg-white text-black font-bold py-3 px-4 focus:outline-none cursor-pointer shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] w-full text-center appearance-none"
+              value={currency.name}
+              onChange={currencyHandler}
+            >
               <option value="usd">USD</option>
               <option value="eur">EUR</option>
               <option value="inr">INR</option>

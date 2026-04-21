@@ -1,21 +1,21 @@
 import { createContext, useContext, useState } from "react";
+import { useCryptoData } from "../hooks/useCryptoData";
 
 export const CryptoContext = createContext(null)
 
 // 2. Provider — wraps the whole app in main.jsx
 export function CryptoProvider({ children }) {
-  const [currency, setCurrency] = useState('usd')
 
   // Our custom hook does all the fetching
-  const { coins, loading, error, lastUpdate } =
-    useCryptoData(currency)
+  const { coins, loading, error, lastUpdate, currency, setCurrency } =
+    useCryptoData()
 
   return (
     <CryptoContext.Provider value={{
       coins, loading, error, lastUpdate,
       currency, setCurrency
     }}>
-      {children}
+      {children} 
     </CryptoContext.Provider>
   )
 }

@@ -2,13 +2,22 @@
 
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
-  --color-primary: #3b82f6; 
-  --color-secondary: #0f172a;
+  
+  --animate-ticker: ticker 30s linear infinite;
+  
+  @keyframes ticker {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-secondary);
-  color: white;
+  background-color: white;
+  color: black;
 }
