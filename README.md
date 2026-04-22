@@ -180,7 +180,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - [CoinGecko API](https://www.coingecko.com/en/api) for providing free crypto market data
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Vite](https://vitejs.dev/) for the blazing fast build tool
+- [Vite](https://vitejs.dev/) for the blazing fast build tools
 - All the amazing open-source contributors 💚
 
 ---
