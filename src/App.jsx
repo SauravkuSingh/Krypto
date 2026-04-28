@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navbar/>
-      <h1>hello</h1>
       <Ticker/>
       <Routes>
         <Route path="/" element={<Home/>}/>
