@@ -36,14 +36,14 @@ const Navbar = () => {
       </div>
 
       {/* Middle Box: Links (Hidden on Mobile) */}
-      <div className="hidden md:flex items-center">
+      {/* <div className="hidden md:flex items-center">
         <ul className="flex gap-8 text-black font-semibold text-[15px]">
           <li><a href="#" className="hover:underline decoration-2 underline-offset-4">Home</a></li>
           <li><a href="#" className="hover:underline decoration-2 underline-offset-4">About</a></li>
           <li><a href="#" className="hover:underline decoration-2 underline-offset-4">Pricing</a></li>
           <li><a href="#" className="hover:underline decoration-2 underline-offset-4">Blog</a></li>
-        </ul>
-      </div>
+        </ul> 
+      </div> */}
 
       {/* Right Box: Dropdown & Button (Hidden on Mobile) */}
       <div className="hidden md:flex items-center gap-5">
